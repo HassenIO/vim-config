@@ -31,14 +31,14 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
 " Various snippets for developing node.js from vim
 Bundle 'jamescarr/snipmate-nodejs'
-" one colorscheme pack to rule them all!
-Bundle 'flazz/vim-colorschemes'
 " A tree explorer plugin for vim.
 Bundle 'scrooloose/nerdtree'
 " The ultimate vim statusline utility.
 Bundle 'Lokaltog/vim-powerline'
 " Fuzzy file, buffer, mru, tag, etc finder.
 Bundle 'kien/ctrlp.vim'
+" one colorscheme pack to rule them all!
+Bundle 'flazz/vim-colorschemes'
 
 filetype plugin indent on     " required!
 "
@@ -80,6 +80,20 @@ let g:syntastic_enable_signs=1
 
 
 "
+" CtrlP settings
+" See :help ctrlp-options
+"
+let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_switch_buffer = 'E'
+let g:ctrlp_max_height = 20
+let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend|app|exe|dmg)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_dotfiles = 0
+let g:ctrlp_switch_buffer = 0
+
+
+"
 " Settings.
 "
 
@@ -117,6 +131,8 @@ set smartcase		" Set smart case
 "
 nmap \n :NERDTreeToggle .<CR>
 nmap \p :CtrlP<CR>
+nmap \b :CtrlPBuffer<CR>
+nmap \q :nohlsearch<CR>
 
 
 " 
