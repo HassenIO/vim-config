@@ -44,8 +44,12 @@ Bundle 'amix/open_file_under_cursor.vim'
 Bundle 'vim-scripts/YankRing.vim'
 " Buffer Explorer / Browser
 Bundle 'vim-scripts/bufexplorer.zip'
-" one colorscheme pack to rule them all!
+" One colorscheme pack to rule them all!
 Bundle 'flazz/vim-colorschemes'
+" Vim Jade template engine syntax highlighting and indention
+Bundle 'digitaltoad/vim-jade'
+" Syntax Highlighting for Stylus
+Bundle 'wavded/vim-stylus'
 
 filetype plugin indent on     " required!
 "
@@ -139,9 +143,10 @@ set smartcase		" Set smart case
 nmap \b :CtrlPBuffer<CR>            " Open CtrlP buffer search
 nmap \e :BufExplorer<CR>            " List buffers
 nmap \f :CtrlP<CR>                  " Open CtrlP file search
+nmap \h :nohlsearch<CR>             " Remove search highlight
 nmap \n :NERDTreeToggle .<CR>       " Toggle NERDTree window
 nmap \p :YRShow<CR>                 " Show YankRing list
-nmap \q :nohlsearch<CR>             " Remove search highlight
+nmap \q :bd<CR>                     " Close the actual buffer
 
 
 " 
@@ -153,4 +158,9 @@ colorscheme Mustang	" Set colorscheme
 
 " >> Syntax highlighting
 syntax enable		" Set syntax highlighting ON
+
+" >> Highlight JSON file like a JavaScript file
+" >> Credit:
+" http://www.codeography.com/2010/07/13/json-syntax-highlighting-in-vim.html
+autocmd BufNewFile,BufRead *.json set ft=javascript
 
